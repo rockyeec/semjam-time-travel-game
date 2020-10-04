@@ -17,7 +17,9 @@ public class PoiObject : ClickableObject
     {
         if (Input.GetMouseButtonUp(1))
         {
+            OnZoomOut();
             coll.enabled = true;
         }
     }
+    protected virtual void OnZoomOut() { }
 }

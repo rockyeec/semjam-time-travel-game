@@ -9,6 +9,10 @@ public class SlotSetup : MonoBehaviour
     [SerializeField] private GameObject jigsawSlotPrefab = null;
     [SerializeField] private GameObject tempJigsawPiecePrefab = null;
     [SerializeField] private Transform tempPiecesStorage = null;
+
+    //temp dirty code
+    private static List<PuzzlePiece> pieces1 = new List<PuzzlePiece>();
+    private static List<PuzzlePiece> pieces2 = new List<PuzzlePiece>();
     private void Start()
     {
         PuzzleParent pP = jigsawSlotPrefab.GetComponent<PuzzleParent>();
@@ -39,7 +43,35 @@ public class SlotSetup : MonoBehaviour
                 pPc.Sprite = tempSpriteList.GetRandomAndRemove();
 
                 pS.Put(pPc);
+
+                if ((y * cols + x) % 3 == 0)
+                {
+                    pieces1.Add(pPc);
+                    pPc.Hide();
+                }
             }
+        }
+        int length = pieces1.Count / 2;
+        for (int i = 0; i < length; i++)
+        {
+            pieces2.Add(pieces1.GetRandomAndRemove());
+        }
+    }
+    private void OnDestroy()
+    {
+        pieces1.Clear();
+        pieces2.Clear();
+    }
+
+    public static void ShowPieces(int i)
+    {
+        List<PuzzlePiece> tempPieces = pieces1;
+        if (i == 2)
+            tempPieces = pieces2;
+
+        foreach (var item in tempPieces)
+        {
+            item.Show();
         }
     }
 }

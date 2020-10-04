@@ -3,6 +3,10 @@ using UnityEngine;
 
 public static class Extensions
 {
+    public static Vector3 With(this Vector3 original, in float? x = null, in float? y = null, in float? z = null)
+    {
+        return new Vector3(x ?? original.x, y ?? original.y, z ?? original.z);
+    }
     public static Vector3 WithZ(this Vector3 original, in float z)
     {
         return new Vector3(original.x, original.y, z);
@@ -20,5 +24,18 @@ public static class Extensions
         Color color = original;
         color.a = alpha;
         return color;
+    }
+
+    public static T TryGetComponentInParent<T>(this Transform obj) where T: Component
+    {
+        T component = null;
+        while (component == null)
+        {
+            component = obj.GetComponentInParent<T>();
+            if (obj.parent == null)
+                break;
+            obj = obj.parent;
+        }
+        return component;
     }
 }

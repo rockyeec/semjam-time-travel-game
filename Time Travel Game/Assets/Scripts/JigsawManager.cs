@@ -2,6 +2,8 @@
 
 public class JigsawManager : PoiObject
 {
+    public static bool IsJigsawGame { get; private set; }
+
     private void Awake()
     {
         PuzzlePiece.OnPieceSelect += PuzzlePiece_OnPieceSelect;
@@ -18,6 +20,7 @@ public class JigsawManager : PoiObject
     private void ZoomInScript_OnZoomOut()
     {
         PuzzlePiece.DisableColliders();
+        IsJigsawGame = false;
     }
 
     private void PuzzlePiece_OnPieceDeselect()
@@ -40,5 +43,6 @@ public class JigsawManager : PoiObject
         base.OnPress();
 
         PuzzlePiece.EnableColliders();
+        IsJigsawGame = true;
     }
 }

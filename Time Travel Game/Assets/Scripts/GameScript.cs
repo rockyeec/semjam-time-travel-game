@@ -6,6 +6,8 @@ public class GameScript : MonoBehaviour
 {
     [SerializeField] SpriteRenderer endingScene = null;
     [SerializeField] GameObject environment = null;
+    [SerializeField] CanvasGroup guide = null;
+
     private void Start()
     {
         endingScene.gameObject.SetActive(false);
@@ -21,11 +23,12 @@ public class GameScript : MonoBehaviour
         AudioManager.PlayBGM("music1");
 
         MenuManager menu = FindObjectOfType<MenuManager>();       
-        menu.PressPlay();
+        menu.PressMenu();
     }
 
     public void WinGame()
     {
+        guide.alpha = 0.0f;
         ZoomInScript.ZoomOut();
         endingScene.gameObject.SetActive(true);
         endingScene.sortingOrder = 100;
