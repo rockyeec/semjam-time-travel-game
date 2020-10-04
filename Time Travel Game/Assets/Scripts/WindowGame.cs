@@ -16,6 +16,6 @@ public class WindowGame : PoiObject
     {
         base.OnZoomOut();
         IsWindowGame = false;
-        AudioManager.PlayBGM("music1");
+        AudioManager.PlayBGM(AudioManager.CurrentMusic);
     }
 }

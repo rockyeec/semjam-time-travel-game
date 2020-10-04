@@ -33,13 +33,15 @@ public class TvGame : PoiObject
     {
         instance.pastRen.sprite = instance.past;
         instance.presentRen.sprite = instance.present;
-        AudioManager.PlayBGM("kids tv");
+        AudioManager.CurrentMusic = "kids tv";
+        AudioManager.PlayBGM(AudioManager.CurrentMusic);
     }
     public static void TurnOff()
     {
         instance.pastRen.sprite = instance.off;
         instance.presentRen.sprite = instance.off;
-        AudioManager.PlayBGM("music1");
+        AudioManager.CurrentMusic = "music1";
+        AudioManager.PlayBGM(AudioManager.CurrentMusic);
     }
 
 }

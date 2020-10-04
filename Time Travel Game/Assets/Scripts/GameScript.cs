@@ -20,7 +20,8 @@ public class GameScript : MonoBehaviour
     IEnumerator StartNextFrame()
     {
         yield return null;
-        AudioManager.PlayBGM("music1");
+        AudioManager.CurrentMusic = "music1";
+        AudioManager.PlayBGM(AudioManager.CurrentMusic);
 
         MenuManager menu = FindObjectOfType<MenuManager>();       
         menu.PressMenu();

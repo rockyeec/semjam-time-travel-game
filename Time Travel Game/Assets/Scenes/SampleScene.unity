@@ -665,7 +665,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 8024ea691e10f3847aa60dd15604b539, type: 3}
   m_Color: {r: 0.0627451, g: 0.07058824, b: 0.13725491, a: 1}
   m_FlipX: 0
@@ -1894,7 +1894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e774993d17f1a8c4cba25815ac6333e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10300d46bab7f3c4692be7407898e464, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5482,7 +5482,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: c6548bc082a0b644f80890f3a0a1f436, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14345253e2a22a8489e06b828a30ee3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5840,7 +5840,7 @@ PrefabInstance:
         type: 3}
       propertyPath: clipList.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: 56c9559de4caed64ca6414c378f025d0, type: 3}
+      objectReference: {fileID: 8300000, guid: 17a1dfe644ba05447b9df27794469478, type: 3}
     - target: {fileID: 5477322221870041611, guid: 38bc5fe7acaa15a4793cfb3544e37944,
         type: 3}
       propertyPath: m_LocalPosition.x

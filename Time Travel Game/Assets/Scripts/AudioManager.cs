@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] clipList = null;
     private readonly Dictionary<string, AudioClip> clipDic = new Dictionary<string, AudioClip>();
 
+    public static string CurrentMusic { get; set; }
+
     public static float SfxVolume { set { instance.sfxSource.volume = value; } }
     public static float BgmVolume { set { instance.bgmSource.volume = value; } }
 
@@ -38,6 +40,9 @@ public class AudioManager : MonoBehaviour
     }
     public static void PlayBGM(string bgmName)
     {
+        if (instance.bgmSource.clip != null &&
+            instance.bgmSource.clip.name == bgmName)
+            return;
         instance.bgmSource.clip = instance.clipDic[bgmName];
         instance.bgmSource.Play();
     }
